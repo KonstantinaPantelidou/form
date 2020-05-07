@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jquery-3.4.0.min.js"></script>
+		<meta charset="utf-8"/>
+		<title> Forms </title>
+		<style>
+		
+		h1{
+			text-align:center ;
+			color:white;
+			background-color:#194775;
+			}
+		fieldset{
+				
+				border:4px solid black;
+				background:-webkit-linear-gradient(#ffff, #ffff8c)
+		</style>
+	 <script>
+                
+                function valthisform() {
+                    var checkboxs=document.getElementsByName("plirofories");
+                    var okay=false;
+                    for(var i=0,l=checkboxs.length;i<l;i++) {
+                        if(checkboxs[i].checked) {
+                            okay=true;
+                            break;
+                        }
+                    }
+                    if (!okay) { 
+                        alert("Please check a checkbox");
+                        event.preventDefault();
+                    } else {
+                    }
+                }
+                
+            </script>
+	<script>
+	function stringlength(inputtxt, maxlength)
+	{ 
+	var field = inputtxt.value; 
+	var mxlen = maxlength;
+	if(field.length> mxlen)
+	{ 
+	event.preventDefault();
+	alert("Please input an email with maximum" +mxlen+ " characters");
+    returnToPreviousPage();
+    return false;
+	}
+	
+	alert('Your email is accepted.');
+	return true;
+
+	}
+	
+</script>
+
+
+	
+	<script>
+	function allLetter(inputtxt)
+      {
+			  
+      var letters = /^[A-Za-z]+$/;
+      if(!inputtxt.value.match(letters))
+      {
+	  event.preventDefault();
+      alert('Please input alphabet characters only');
+	  returnToPreviousPage();
+      return false;
+      }
+      alert('Your name is accepted');
+      return true;
+      }
+	  </script>
+	  
+	  
+	  <script>
+	  function functionLetter(x, y, maxlength)
+	  {
+		valthisform();
+		allLetter(x);
+		stringlength(y,maxlength);
+		
+	  }
+	  </script>
+	
+	
+	
+	
+	
+
+    
+	</head>
+	<body >
+		
+		<h1 style="text-align:center;"> Φόρμα Eπικοινωνίας </h1>
+		<hr/>
+		<form id = "clientForm"  name = "clientForm" method = "get" action="emfanizo.html" onsubmit="functionLetter(document.clientForm.firstname,document.clientForm.email, 15)">
+		<fieldset>
+			
+				<h2><b> Συμπληρώστε παρακαλώ τα παρακάτω στοιχεία </b></h2>
+				
+				 Ονοματεπώνυμο:<br>
+				<input type="text" name="firstname" value="" size="20" required><br>
+				
+				Ηλικία (διαλέξτε ένα από τα παρακάτω)
+				</br>
+			
+				<input type="radio" name="hliikia" value="OS17" > Έως 17<br>
+				<input type="radio" name="hlikia" value="APO18EOS30"> Από 18 έως 30<br>
+				<input type="radio" name="hlikia" value="APO31EOS40"> Απο 31 έως 40<br>
+				<input type="radio" name="hlikia" value="APO41EOS55"> Απο 41 έως 55<br>
+				<input type="radio" name="hlikia" value="APO56EOS65"> Απο 56 έως 65<br>
+				<input type="radio" name="hlikia" value="PANOAPO66"> Πάνω από 66<br>
+				
+				
+			
+				
+				Τι πληροφορίες θέλετε(διαλέξτε όσα θέλετε): <br />
+				
+				<input type="checkbox" name="plirofories" value="ksenodoxeia" checked > Ξενοδοχεία<br>
+				<input type="checkbox" name="plirofories" value="mouseia" > Μουσεία <br>
+				<input type="checkbox" name="plirofories" value="aksiotheata"  > Αξιοθέατα <br>
+				<input type="checkbox" name="plirofories" value="fagito"  > Εστιατόρια-Φαγητό<br>
+		
+				
+				Περιοχή που σας ενδιαφέρει: <br />
+				<select name="polh" size="4">
+				  <option value="makedonia">Μακεδονία</option>
+				  <option value="kiklades">Κυκλάδες</option>
+				  <option value="thraki">Θράκη</option>
+				  <option value="other">Άλλη</option>
+				</select>
+				<br/>
+				
+				e-mail επικοινωνίας:<br>
+				<input type="text" name="email" value="" size="20" required ><br>
+			
+				<br>
+				<br>
+				
+				<input type="submit" value="Υποβολή-Δείξε στοιχεία">
+			    <input type="reset"  value="Κλείσιμο">
+				
+				
+
+			
+	</form>
+	</fieldset>
+	
+	
+	
+	</body>
+	
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Apotelesmata</title>
+
+		<style>
+		div#problemArea {border:solid 2px red; margin:7px; 
+			padding:5px;
+			background-color:#000000;
+			color: white;
+			float:left;
+			width:40%;} 
+		</style>
+
+
+
+	</head>
+	<body>
+
+	
+		<h1>Καταγραφή στοιχείων</h1>
+		<div id="problemArea"> Εδώ θα εμφανιστούν οι καταχωρήσεις: 
+		<br>
+		---------------------------------------------------------</div>
+		
+      		<script>
+		
+		
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+		
+		
+		
+		function appendTo(ID,Text){
+			var x = document.getElementById(ID);
+			x.innerHTML = x.innerHTML + "<br/>" + Text + "<br />";
+		}
+		var first = getUrlVars()["firstname"];
+        var second = getUrlVars()["hlikia"];
+		var third = getUrlVars()["plirofories"];
+		var fourth = getUrlVars()["polh"];
+		var fifth = getUrlVars()["email"];
+ 
+   
+		
+       appendTo("problemArea", first);
+	   appendTo("problemArea", second);
+		appendTo("problemArea", third);
+		appendTo("problemArea", fourth);
+		appendTo("problemArea", fifth);
+		</script>  
+		
+	</body>
+</html>
